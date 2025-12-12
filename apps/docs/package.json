@@ -4,16 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3001",
-    "build": "next build",
-    "start": "next start",
     "lint": "eslint . --max-warnings 0 --no-warn-ignored --cache --cache-location node_modules/.cache/eslint",
     "check-types": "tsc --noEmit",
-    "clean": "rm -rf node_modules .turbo .next"
+    "clean": "rm -rf node_modules .turbo"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
