@@ -1,0 +1,56 @@
+name: Code validation
+
+on:
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: pnpm setup
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
+
+  format-check:
+    runs-on: ubuntu-latest
+    name: check formatting
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: pnpm setup
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Format check
+        run: pnpm format:check
+
+  check-types:
+    runs-on: ubuntu-latest
+    name: check types
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: pnpm setup
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Type check
+        run: pnpm check-types

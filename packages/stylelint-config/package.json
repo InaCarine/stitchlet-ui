@@ -1,0 +1,20 @@
+{
+  "name": "@repo/stylelint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./base": "./base.js"
+  },
+  "scripts": {
+    "clean": "rm -rf ./node_modules .turbo"
+  },
+  "devDependencies": {
+    "stylelint": "catalog:",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-gamut": "^1.3.4"
+  },
+  "peerDependencies": {
+    "stylelint": "^16.0.0"
+  }
+}
