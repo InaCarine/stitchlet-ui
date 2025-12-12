@@ -33,7 +33,7 @@
   },
   "packageManager": "pnpm@10.18.3",
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19.0"
   },
   "overrides": {
     "glob": "^10.5.0"
