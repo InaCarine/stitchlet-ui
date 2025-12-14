@@ -8,6 +8,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "storybook": "turbo run storybook",
     "lint": "turbo run lint --continue",
     "lint:css": "turbo run lint:css --continue",
     "test": "turbo run test",
