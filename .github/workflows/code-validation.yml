@@ -5,29 +5,14 @@ on:
     branches: ["*"]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: pnpm setup
-        uses: ./.github/actions/pnpm-setup
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm lint
-
   format-check:
     runs-on: ubuntu-latest
-    name: check formatting
+    name: Check formatting
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: pnpm setup
+      - name: Setup pnpm
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
@@ -36,21 +21,53 @@ jobs:
       - name: Format check
         run: pnpm format:check
 
-  check-types:
+  lint:
     runs-on: ubuntu-latest
-    name: check types
+    name: Check linting
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: pnpm setup
+      - name: Setup pnpm
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
+      - name: Lint
+        run: pnpm lint
+
+  check-types:
+    runs-on: ubuntu-latest
+    name: Check types
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Type check
         run: pnpm check-types
+
+  check-build:
+    runs-on: ubuntu-latest
+    name: Check build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Setup turbo cache
+        uses: ./.github/actions/turbo-cache
+
+      - name: Build
+        run: pnpm build

@@ -1,4 +1,4 @@
-name: Tests
+name: Frontend Unit Tests
 
 on:
   pull_request:
@@ -7,19 +7,19 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    name: pnpm test
+    name: Running unit tests
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: pnpm setup
+      - name: Setup pnpm
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
+      - name: Setup turbo cache
+        uses: ./.github/actions/turbo-cache
 
       - name: Test
         run: pnpm test

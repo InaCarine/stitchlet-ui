@@ -1,0 +1,13 @@
+name: Setup turbo cache
+description: Restore and save Turborepo cache
+runs:
+  using: "composite"
+  steps:
+    - name: Setup turbo cache
+      uses: actions/cache@v4
+      with:
+        path: .turbo
+        key: ${{ runner.os }}-turbo-${{ github.job }}-${{ hashFiles('**/pnpm-lock.yaml', 'turbo.json') }}
+        restore-keys: |
+          ${{ runner.os }}-turbo-${{ github.job }}-
+          ${{ runner.os }}-turbo-
