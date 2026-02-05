@@ -1,0 +1,10 @@
+{
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "strict": true,
+    "types": ["jest"]
+  },
+  "include": ["src/**/*.ts", "jest.config.ts", "jest.setup.ts"],
+  "exclude": ["node_modules", "dist"]
+}
