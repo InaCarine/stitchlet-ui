@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "docs",
+			"path": "../apps/docs"
+		},
+		{
+			"name": "typescript-config",
+			"path": "../packages/typescript-config"
+		},
+		{
+			"name": "eslint-config",
+			"path": "../packages/eslint-config"
+		},
+		{
+			"name": "stylelint-config",
+			"path": "../packages/stylelint-config"
+		},
+		{
+			"name": "ui",
+			"path": "../packages/ui"
+		},
+		{
+			"name": "hooks",
+			"path": "../packages/hooks"
+		}
+	],
+	"settings": {
+		"jest.disabledWorkspaceFolders": [
+			"stitchlet-ui",
+			"docs",
+			"typescript-config",
+			"eslint-config",
+			"stylelint-config"
+		]
+	}
+}
