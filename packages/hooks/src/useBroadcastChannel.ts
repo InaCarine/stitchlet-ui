@@ -4,9 +4,9 @@ import { isSSR } from './utils/isSSR';
 
 type ChannelName = string;
 
-const useBroadcastChannel = <T = unknown>(channelName: ChannelName) => {
+export const useBroadcastChannel = <T = unknown>(channelName: ChannelName) => {
   const [broadcastMessage, setBroadcastMessage] = useState<T | null>(null);
-  const channelRef = useRef<BroadcastChannel | null>(null);
+  const channelRef = useRef<BroadcastChannel>(null);
 
   const handleMessage = useCallback((event: MessageEvent<T>) => {
     setBroadcastMessage(event.data);
@@ -41,5 +41,3 @@ const useBroadcastChannel = <T = unknown>(channelName: ChannelName) => {
 
   return { broadcastMessage, sendBroadcast };
 };
-
-export default useBroadcastChannel;

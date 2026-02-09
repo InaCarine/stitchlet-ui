@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useBroadcastChannel from '../useBroadcastChannel';
+import { useBroadcastChannel } from '../useBroadcastChannel';
 
 const originalBroadcastChannel = global.BroadcastChannel;
 
@@ -43,89 +43,85 @@ class BroadcastChannelMock implements BroadcastChannelLike {
 // @ts-expect-error: Overriding global for test
 global.BroadcastChannel = BroadcastChannelMock;
 
-describe('Hooks', () => {
-  describe('useBroadcastChannel', () => {
-    afterEach(() => {
-      BroadcastChannelMock.instances = [];
-      closeMock.mockClear();
-      postMessageMock.mockClear();
+describe('useBroadcastChannel', () => {
+  afterEach(() => {
+    BroadcastChannelMock.instances = [];
+    closeMock.mockClear();
+    postMessageMock.mockClear();
+  });
+
+  afterAll(() => {
+    global.BroadcastChannel = originalBroadcastChannel;
+  });
+
+  it('should receive a message sent on the same channel', () => {
+    const { result: sender } = renderHook(() => useBroadcastChannel('test-channel'));
+    const { result: receiver } = renderHook(() => useBroadcastChannel('test-channel'));
+
+    act(() => {
+      sender.current.sendBroadcast('hello world');
     });
 
-    afterAll(() => {
-      global.BroadcastChannel = originalBroadcastChannel;
+    expect(receiver.current.broadcastMessage).toBe('hello world');
+  });
+
+  it('should not receive messages sent on a different channel', () => {
+    const { result: sender } = renderHook(() => useBroadcastChannel('channel-1'));
+    const { result: receiver } = renderHook(() => useBroadcastChannel('channel-2'));
+
+    act(() => {
+      sender.current.sendBroadcast('should not be received');
     });
 
-    it('should receive a message sent on the same channel', () => {
-      const { result: sender } = renderHook(() => useBroadcastChannel('test-channel'));
-      const { result: receiver } = renderHook(() => useBroadcastChannel('test-channel'));
+    expect(receiver.current.broadcastMessage).toBe(null);
+  });
 
-      act(() => {
-        sender.current.sendBroadcast('hello world');
-      });
+  it('should close the channel on unmount', () => {
+    const { unmount } = renderHook(() => useBroadcastChannel('test-close'));
+    const instanceCountBefore = BroadcastChannelMock.instances.length;
 
-      expect(receiver.current.broadcastMessage).toBe('hello world');
+    unmount();
+
+    expect(closeMock).toHaveBeenCalled();
+    expect(BroadcastChannelMock.instances.length).toBe(instanceCountBefore - 1);
+  });
+
+  it('should handle multiple messages', () => {
+    const { result: sender } = renderHook(() => useBroadcastChannel('multi-channel'));
+    const { result: receiver } = renderHook(() => useBroadcastChannel('multi-channel'));
+
+    act(() => {
+      sender.current.sendBroadcast('first');
+      sender.current.sendBroadcast('second');
     });
 
-    it('should not receive messages sent on a different channel', () => {
-      const { result: sender } = renderHook(() => useBroadcastChannel('channel-1'));
-      const { result: receiver } = renderHook(() => useBroadcastChannel('channel-2'));
+    expect(receiver.current.broadcastMessage).toBe('second');
+    expect(postMessageMock).toHaveBeenCalledTimes(2);
+  });
 
-      act(() => {
-        sender.current.sendBroadcast('should not be received');
-      });
+  it('should not receive messages after unmount', () => {
+    const { result: sender } = renderHook(() => useBroadcastChannel('cleanup-channel'));
+    const { result: receiver, unmount } = renderHook(() => useBroadcastChannel('cleanup-channel'));
 
-      expect(receiver.current.broadcastMessage).toBe(null);
+    unmount();
+
+    act(() => {
+      sender.current.sendBroadcast('should not be received');
     });
 
-    it('should close the channel on unmount', () => {
-      const { unmount } = renderHook(() => useBroadcastChannel('test-close'));
-      const instanceCountBefore = BroadcastChannelMock.instances.length;
+    expect(receiver.current.broadcastMessage).not.toBe('should not be received');
+  });
 
-      unmount();
+  it('should send and receive object messages', () => {
+    const { result: sender } = renderHook(() => useBroadcastChannel('obj-channel'));
+    const { result: receiver } = renderHook(() => useBroadcastChannel('obj-channel'));
 
-      expect(closeMock).toHaveBeenCalled();
-      expect(BroadcastChannelMock.instances.length).toBe(instanceCountBefore - 1);
+    const obj = { status: 'applied', jobId: '123' };
+
+    act(() => {
+      sender.current.sendBroadcast(obj);
     });
 
-    it('should handle multiple messages', () => {
-      const { result: sender } = renderHook(() => useBroadcastChannel('multi-channel'));
-      const { result: receiver } = renderHook(() => useBroadcastChannel('multi-channel'));
-
-      act(() => {
-        sender.current.sendBroadcast('first');
-        sender.current.sendBroadcast('second');
-      });
-
-      expect(receiver.current.broadcastMessage).toBe('second');
-      expect(postMessageMock).toHaveBeenCalledTimes(2);
-    });
-
-    it('should not receive messages after unmount', () => {
-      const { result: sender } = renderHook(() => useBroadcastChannel('cleanup-channel'));
-      const { result: receiver, unmount } = renderHook(() =>
-        useBroadcastChannel('cleanup-channel')
-      );
-
-      unmount();
-
-      act(() => {
-        sender.current.sendBroadcast('should not be received');
-      });
-
-      expect(receiver.current.broadcastMessage).not.toBe('should not be received');
-    });
-
-    it('should send and receive object messages', () => {
-      const { result: sender } = renderHook(() => useBroadcastChannel('obj-channel'));
-      const { result: receiver } = renderHook(() => useBroadcastChannel('obj-channel'));
-
-      const obj = { status: 'applied', jobId: '123' };
-
-      act(() => {
-        sender.current.sendBroadcast(obj);
-      });
-
-      expect(receiver.current.broadcastMessage).toEqual(obj);
-    });
+    expect(receiver.current.broadcastMessage).toEqual(obj);
   });
 });
