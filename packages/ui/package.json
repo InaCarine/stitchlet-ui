@@ -1,6 +1,24 @@
 {
   "name": "@stitchlet/ui",
   "version": "0.0.0",
+  "description": "Accessible UI components ready to be stitched together.",
+  "license": "MIT",
+  "author": {
+    "name": "InaCarine",
+    "url": "https://github.com/InaCarine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InaCarine/stitchlet-ui.git",
+    "directory": "packages/ui"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "accessible",
+    "inacarine",
+    "stitchlet"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
