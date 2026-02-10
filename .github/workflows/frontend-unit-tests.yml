@@ -16,7 +16,7 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Setup turbo cache
         uses: ./.github/actions/turbo-cache

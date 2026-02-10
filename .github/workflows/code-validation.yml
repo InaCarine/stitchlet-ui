@@ -16,7 +16,7 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Format check
         run: pnpm format:check
@@ -32,7 +32,7 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm lint
@@ -48,7 +48,7 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Type check
         run: pnpm check-types
@@ -64,7 +64,7 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Setup turbo cache
         uses: ./.github/actions/turbo-cache
