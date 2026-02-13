@@ -1,0 +1,17 @@
+{
+  "branchPrefix": "renovate/",
+  "username": "renovate-release",
+  "gitAuthor": "Ina Carine <29457046+InaCarine@users.noreply.github.com>",
+  "onboarding": false,
+  "requireConfig": "optional",
+  "platform": "github",
+  "forkProcessing": "enabled",
+  "packageRules": [
+    {
+      "description": "lockFileMaintenance",
+      "matchUpdateTypes": ["pin", "digest", "patch", "minor", "major", "lockFileMaintenance"],
+      "dependencyDashboardApproval": false,
+      "minimumReleaseAge": null
+    }
+  ]
+}
