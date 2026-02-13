@@ -6,7 +6,6 @@ export default {
   requireConfig: 'optional',
   platform: 'github',
   forkProcessing: 'enabled',
-  dryRun: 'false',
   packageRules: [
     {
       description: 'lockFileMaintenance',
