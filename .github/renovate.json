@@ -3,9 +3,11 @@
   "username": "renovate-release",
   "gitAuthor": "InaCarine <29457046+InaCarine@users.noreply.github.com>",
   "onboarding": false,
-  "requireConfig": "optional",
+  "requireConfig": "ignored",
+  "repositories": ["InaCarine/stitchlet-ui"],
   "platform": "github",
   "forkProcessing": "enabled",
+  "semanticCommits": "enabled",
   "packageRules": [
     {
       "description": "lockFileMaintenance",
