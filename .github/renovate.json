@@ -1,19 +1,35 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
+  "extends": ["config:best-practices", "mergeConfidence:all-badges"],
   "branchPrefix": "renovate/",
-  "username": "renovate-release",
   "gitAuthor": "InaCarine <29457046+InaCarine@users.noreply.github.com>",
-  "onboarding": false,
-  "requireConfig": "ignored",
   "repositories": ["InaCarine/stitchlet-ui"],
   "platform": "github",
-  "forkProcessing": "enabled",
+  "minimumReleaseAge": "14 days",
+  "platformAutomerge": true,
   "semanticCommits": "enabled",
+  "internalChecksFilter": "strict",
+  "onboarding": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "packageRules": [
     {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["lint", "prettier"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
       "description": "lockFileMaintenance",
-      "matchUpdateTypes": ["pin", "digest", "patch", "minor", "major", "lockFileMaintenance"],
-      "dependencyDashboardApproval": false,
-      "minimumReleaseAge": null
+      "matchUpdateTypes": ["digest", "patch", "minor", "lockFileMaintenance"],
+      "dependencyDashboardApproval": false
     }
   ]
 }

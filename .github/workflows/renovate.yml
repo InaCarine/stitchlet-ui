@@ -8,6 +8,9 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     name: Run Renovate Bot
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
