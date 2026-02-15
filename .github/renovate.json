@@ -2,6 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
   "extends": ["config:best-practices", "mergeConfidence:all-badges"],
   "branchPrefix": "renovate/",
+  "labels": ["dependencies"],
+  "automergeStrategy": "rebase",
   "gitAuthor": "InaCarine <29457046+InaCarine@users.noreply.github.com>",
   "repositories": ["InaCarine/stitchlet-ui"],
   "platform": "github",
