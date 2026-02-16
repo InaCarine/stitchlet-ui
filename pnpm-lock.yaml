@@ -9,6 +9,9 @@ catalogs:
     '@types/node':
       specifier: ^22.15.3
       version: 22.19.11
+    '@types/react':
+      specifier: ^19.1.0
+      version: 19.2.14
     '@types/react-dom':
       specifier: ^19.1.1
       version: 19.2.3
@@ -169,7 +172,7 @@ importers:
         specifier: 'catalog:'
         version: 5.9.3
       typescript-eslint:
-        specifier: ^8.40.0
+        specifier: ^8.54.0
         version: 8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
 
   packages/hooks:
