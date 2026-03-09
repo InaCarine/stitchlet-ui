@@ -15,6 +15,9 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.1.1
       version: 19.2.3
+    eslint:
+      specifier: ^9.34.0
+      version: 9.39.3
     react:
       specifier: ^19.1.2
       version: 19.2.4
@@ -39,7 +42,7 @@ importers:
         specifier: ^20.4.1
         version: 20.4.1
       '@commitlint/config-pnpm-scopes':
-        specifier: ^20.1.0
+        specifier: ^20.4.0
         version: 20.4.0
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^3.7.2
