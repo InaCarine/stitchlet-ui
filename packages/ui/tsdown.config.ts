@@ -10,7 +10,9 @@ export default defineConfig({
   target: 'esnext',
   dts: true,
   clean: true,
-  external: ['react', 'react-dom'],
+  deps: {
+    neverBundle: ['react', 'react-dom'],
+  },
   minify: true,
   sourcemap: true,
   plugins: [
