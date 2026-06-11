@@ -11,6 +11,7 @@ catalog:
   'react-dom': '^19.1.0'
   'stylelint': '^16.25.0'
   'typescript': '^5.9.2'
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  esbuild: false
+  sharp: false
+  unrs-resolver: false
