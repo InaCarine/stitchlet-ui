@@ -19,5 +19,8 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-onboarding'),
   ],
   framework: getAbsolutePath('@storybook/react-vite'),
+  core: {
+    disableTelemetry: true,
+  },
 };
 export default config;
