@@ -46,7 +46,7 @@ importers:
         version: 21.0.2
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^3.7.2
-        version: 3.7.2(prettier@2.8.8)
+        version: 3.7.2(prettier@3.8.4)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -54,8 +54,8 @@ importers:
         specifier: ^17.0.7
         version: 17.0.7
       prettier:
-        specifier: ^2.8.8
-        version: 2.8.8
+        specifier: ^3.8.3
+        version: 3.8.4
       turbo:
         specifier: ^2.9.4
         version: 2.9.4
@@ -4754,13 +4754,13 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-
   prettier@3.8.1:
     resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -6487,7 +6487,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@ianvs/prettier-plugin-sort-imports@3.7.2(prettier@2.8.8)':
+  '@ianvs/prettier-plugin-sort-imports@3.7.2(prettier@3.8.4)':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/generator': 7.29.1
@@ -6497,7 +6497,7 @@ snapshots:
       javascript-natural-sort: 0.7.1
       lodash.clone: 4.5.0
       lodash.isequal: 4.5.0
-      prettier: 2.8.8
+      prettier: 3.8.4
     transitivePeerDependencies:
       - supports-color
 
@@ -10751,9 +10751,9 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@2.8.8: {}
-
   prettier@3.8.1: {}
+
+  prettier@3.8.4: {}
 
   pretty-format@27.5.1:
     dependencies:
