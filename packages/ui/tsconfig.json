@@ -1,9 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "strict": true,
-    "target": "ES2021",
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "lib": ["DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,
@@ -14,7 +12,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "useDefineForClassFields": true,
-    "outDir": "dist",
+    "outDir": "./dist",
+    "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

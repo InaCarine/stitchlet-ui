@@ -1,9 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "strict": true,
-    "target": "ES2021",
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "lib": ["DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "types": ["jest"],
@@ -12,6 +10,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "jest.config.ts", "jest.setup.ts"],
+  "include": ["src/**/*", "jest.config.ts", "jest.setup.ts"],
   "exclude": ["node_modules", "dist"]
 }
