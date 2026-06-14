@@ -9,7 +9,7 @@ catalog:
   'next': '^15.5.9'
   'react': '^19.1.2'
   'react-dom': '^19.1.0'
-  'stylelint': '^16.25.0'
+  'stylelint': '^17.12.0'
   'typescript': '^5.9.2'
 allowBuilds:
   esbuild: false
