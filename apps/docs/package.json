@@ -32,9 +32,9 @@
     "typescript": "catalog:",
     "@chromatic-com/storybook": "^5.2.1",
     "@storybook/addon-vitest": "^10.4.3",
-    "vitest": "^4.0.15",
+    "vitest": "^4.1.6",
     "playwright": "^1.58.1",
-    "@vitest/browser-playwright": "^4.0.15",
-    "@vitest/coverage-v8": "^4.0.15"
+    "@vitest/browser-playwright": "^4.1.6",
+    "@vitest/coverage-v8": "^4.1.6"
   }
 }
