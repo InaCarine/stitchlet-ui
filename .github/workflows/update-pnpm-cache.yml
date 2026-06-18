@@ -1,0 +1,23 @@
+name: Update pnpm cache
+description: Update pnpm cache on push to main
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  build-cache:
+    name: Build Cache
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
