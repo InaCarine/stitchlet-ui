@@ -33,7 +33,7 @@
     "eslint": "catalog:",
     "eslint-plugin-storybook": "^10.4.3",
     "playwright": "^1.58.1",
-    "storybook": "10.4.3",
+    "storybook": "10.4.6",
     "typescript": "catalog:",
     "vitest": "^4.1.8"
   }
