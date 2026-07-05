@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/typescript-config/base",
+  "compilerOptions": {
+    "lib": ["DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["jest"],
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "jest.config.ts", "jest.setup.ts"],
+  "exclude": ["node_modules", "dist"]
+}
