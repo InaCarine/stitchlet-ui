@@ -1,22 +1,23 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ElementType } from 'react';
 
 import styles from './Button.module.css';
+import { ButtonProps } from './types';
 
-interface ButtonProps {
-  children: ReactNode;
-  className?: string;
-  appName: string;
-}
+const defaultElement = 'button';
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
+export const Button = <E extends ElementType = typeof defaultElement>({
+  as,
+  children,
+  className,
+  ...restProps
+}: ButtonProps<E>) => {
+  const Element = as || defaultElement;
+
   return (
-    <button
-      className={`${styles.button} ${className ?? ''}`}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
-    >
+    <Element className={`${styles.button} ${className ?? ''}`} {...restProps}>
       {children}
-    </button>
+    </Element>
   );
 };
