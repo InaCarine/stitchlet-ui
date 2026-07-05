@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-
-import { isSSR } from './utils/isSSR';
+import { isSSR } from '@stitchlet/utilities';
 
 type ChannelName = string;
 
