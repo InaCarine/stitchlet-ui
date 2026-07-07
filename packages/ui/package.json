@@ -52,6 +52,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/stylelint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@stitchlet/utilities": "workspace:*",
     "@rollup/plugin-babel": "^7.1.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

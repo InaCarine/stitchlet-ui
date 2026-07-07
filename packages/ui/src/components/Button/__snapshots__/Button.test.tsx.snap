@@ -2,7 +2,7 @@
 
 exports[`Button matches snapshot 1`] = `
 <button
-  class="button "
+  class="button"
 >
   Snapshot
 </button>

@@ -1,6 +1,7 @@
 'use client';
 
 import { ElementType } from 'react';
+import { clsx } from '@stitchlet/utilities';
 
 import styles from './Button.module.css';
 import { ButtonProps } from './types';
@@ -16,7 +17,7 @@ export const Button = <E extends ElementType = typeof defaultElement>({
   const Element = as || defaultElement;
 
   return (
-    <Element className={`${styles.button} ${className ?? ''}`} {...restProps}>
+    <Element className={clsx(styles.button, className)} {...restProps}>
       {children}
     </Element>
   );
