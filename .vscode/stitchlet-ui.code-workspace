@@ -26,6 +26,10 @@
 		{
 			"name": "hooks",
 			"path": "../packages/hooks"
+		},
+		{
+			"name": "utilities",
+			"path": "../packages/utilities"
 		}
 	],
 	"settings": {
