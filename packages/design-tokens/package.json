@@ -1,0 +1,29 @@
+{
+  "name": "@stitchlet/design-tokens",
+  "version": "0.0.0",
+  "description": "Design tokens to be used across the Stitchlet project",
+  "license": "MIT",
+  "author": {
+    "name": "InaCarine",
+    "url": "https://github.com/InaCarine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InaCarine/stitchlet-ui.git",
+    "directory": "packages/ui"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0 --no-warn-ignored --cache --cache-location node_modules/.cache/eslint",
+    "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-location node_modules/.cache/stylelint --max-warnings=0",
+    "clean": "rm -rf node_modules .turbo"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/stylelint-config": "workspace:*",
+    "eslint": "catalog:",
+    "style-dictionary": "^5.5.0",
+    "stylelint": "catalog:"
+  }
+}

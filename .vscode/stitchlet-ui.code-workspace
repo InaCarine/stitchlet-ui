@@ -8,6 +8,10 @@
 			"path": "../apps/docs"
 		},
 		{
+			"name": "design-tokens",
+			"path": "../packages/design-tokens"
+		},
+		{
 			"name": "typescript-config",
 			"path": "../packages/typescript-config"
 		},
@@ -36,6 +40,7 @@
 		"jest.disabledWorkspaceFolders": [
 			"stitchlet-ui",
 			"docs",
+			"design-tokens",
 			"typescript-config",
 			"eslint-config",
 			"stylelint-config"
