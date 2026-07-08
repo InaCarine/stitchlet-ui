@@ -14,10 +14,16 @@
   },
   "type": "module",
   "private": true,
+  "main": "build/index.js",
+  "files": [
+    "build",
+    "properties"
+  ],
   "scripts": {
+    "build:tokens": "style-dictionary build",
     "lint": "eslint . --max-warnings 0 --no-warn-ignored --cache --cache-location node_modules/.cache/eslint",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-location node_modules/.cache/stylelint --max-warnings=0",
-    "clean": "rm -rf node_modules .turbo"
+    "clean": "rm -rf node_modules .turbo build"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
