@@ -57,4 +57,16 @@
   --color-purple-70: #6928af;
   --color-purple-80: #51198c;
   --color-purple-90: #35115c;
+  --space-10: 0.25rem;
+  --space-20: 0.5rem;
+  --space-30: 0.75rem;
+  --space-40: 1rem;
+  --space-50: 1.5rem;
+  --space-60: 2rem;
+  --space-70: 2.5rem;
+  --space-80: 3rem;
+  --space-90: 4rem;
+  --color-background-brand-default: var(--color-purple-50);
+  --color-background-brand-default-hover: var(--color-purple-70);
+  --color-background-brand-default-active: var(--color-purple-90);
 }

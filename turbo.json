@@ -8,7 +8,6 @@
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "build:tokens": {
-      "dependsOn": ["^build"],
       "outputs": ["build/**"],
       "cache": false
     },

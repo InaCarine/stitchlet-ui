@@ -1,0 +1,20 @@
+{
+  "color": {
+    "background": {
+      "brand": {
+        "default": {
+          "value": "{color.purple.50}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.purple.70}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.purple.90}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}
