@@ -5,11 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-    },
-    "build:tokens": {
-      "outputs": ["build/**"],
-      "cache": false
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**", "styles/**"]
     },
     "lint": {
       "dependsOn": ["^lint", "lint:css"],

@@ -1,0 +1,72 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-grey-10: oklch(91.5% 0 0);
+  --color-grey-20: oklch(82.9% 0 0);
+  --color-grey-30: oklch(74.4% 0 0);
+  --color-grey-40: oklch(65.3% 0 0);
+  --color-grey-50: oklch(56.2% 0 0);
+  --color-grey-60: oklch(47.8% 0 0);
+  --color-grey-70: oklch(39.4% 0 0);
+  --color-grey-80: oklch(30.1% 0 0);
+  --color-grey-90: oklch(20.4% 0 0);
+  --color-red-10: oklch(89.9% 0.05 18.1);
+  --color-red-20: oklch(81.2% 0.091 19.2);
+  --color-red-30: oklch(73.4% 0.143 21.1);
+  --color-red-40: oklch(65.8% 0.188 23.8);
+  --color-red-50: oklch(59% 0.218 27.2);
+  --color-red-60: oklch(51.5% 0.2 28.5);
+  --color-red-70: oklch(44.1% 0.178 28.8);
+  --color-red-80: oklch(36.4% 0.146 28.7);
+  --color-red-90: oklch(27.1% 0.106 28.3);
+  --color-yellow-10: oklch(90.09% 0.088 88.94);
+  --color-yellow-20: oklch(81.15% 0.142 86.14);
+  --color-yellow-30: oklch(72.4% 0.148 80.9);
+  --color-yellow-40: oklch(64.36% 0.132 80.84);
+  --color-yellow-50: oklch(56.6% 0.116 81.81);
+  --color-yellow-60: oklch(49.15% 0.101 81.98);
+  --color-yellow-70: oklch(42.1% 0.0856 82.7);
+  --color-yellow-80: oklch(34.74% 0.071 84.05);
+  --color-yellow-90: oklch(26.05% 0.052 86.75);
+  --color-green-10: oklch(89.36% 0.104 135.18);
+  --color-green-20: oklch(79.43% 0.162 136);
+  --color-green-30: oklch(70.63% 0.198 137.42);
+  --color-green-40: oklch(62.66% 0.19 138.42);
+  --color-green-50: oklch(55% 0.169 138.66);
+  --color-green-60: oklch(48.14% 0.147 138.55);
+  --color-green-70: oklch(41% 0.123 138.14);
+  --color-green-80: oklch(33.64% 0.099 137.79);
+  --color-green-90: oklch(25.11% 0.071 136.17);
+  --color-blue-10: oklch(89.3% 0.053 236.32);
+  --color-blue-20: oklch(79.88% 0.102 238.2);
+  --color-blue-30: oklch(71.31% 0.124 239.85);
+  --color-blue-40: oklch(63.69% 0.141 242.72);
+  --color-blue-50: oklch(56.17% 0.141 246);
+  --color-blue-60: oklch(49% 0.121 245.43);
+  --color-blue-70: oklch(41.98% 0.101 244.71);
+  --color-blue-80: oklch(34.63% 0.08 243.49);
+  --color-blue-90: oklch(26.15% 0.058 242);
+  --color-purple-10: oklch(90.18% 0.046 307.89);
+  --color-purple-20: oklch(81.4% 0.092 306.13);
+  --color-purple-30: oklch(73.18% 0.134 305.82);
+  --color-purple-40: oklch(65.9% 0.187 304.27);
+  --color-purple-50: oklch(58.85% 0.208 302.82);
+  --color-purple-60: oklch(52% 0.215 301.12);
+  --color-purple-70: oklch(44.84% 0.198 300.16);
+  --color-purple-80: oklch(37.32% 0.172 299.68);
+  --color-purple-90: oklch(28.35% 0.124 300.23);
+  --space-10: 0.25rem;
+  --space-20: 0.5rem;
+  --space-30: 0.75rem;
+  --space-40: 1rem;
+  --space-50: 1.5rem;
+  --space-60: 2rem;
+  --space-70: 2.5rem;
+  --space-80: 3rem;
+  --space-90: 4rem;
+  --color-background-brand-default: var(--color-purple-50);
+  --color-background-brand-default-hover: var(--color-purple-70);
+  --color-background-brand-default-active: var(--color-purple-90);
+}

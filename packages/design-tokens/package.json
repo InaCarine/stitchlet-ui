@@ -10,17 +10,22 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/InaCarine/stitchlet-ui.git",
-    "directory": "packages/ui"
+    "directory": "packages/design-tokens"
   },
   "type": "module",
   "private": true,
-  "main": "build/index.js",
+  "style": "build/css/_variables.css",
   "files": [
-    "build",
-    "properties"
+    "build"
+  ],
+  "exports": {
+    "./style": "./build/css/_variables.css"
+  },
+  "sideEffects": [
+    "build/css/_variables.css"
   ],
   "scripts": {
-    "build:tokens": "style-dictionary build",
+    "build": "style-dictionary build",
     "lint": "eslint . --max-warnings 0 --no-warn-ignored --cache --cache-location node_modules/.cache/eslint",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-location node_modules/.cache/stylelint --max-warnings=0",
     "clean": "rm -rf node_modules .turbo build"

@@ -15,6 +15,9 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.2.3
       version: 19.2.3
+    eslint:
+      specifier: ^9.39.4
+      version: 9.39.5
     react:
       specifier: ^19.2.4
       version: 19.2.7
@@ -283,6 +286,9 @@ importers:
       '@rollup/plugin-babel':
         specifier: ^7.1.0
         version: 7.1.0(@babel/core@7.29.7)(@types/babel__core@7.20.5)(rollup@4.62.2)
+      '@stitchlet/design-tokens':
+        specifier: workspace:*
+        version: link:../design-tokens
       '@stitchlet/utilities':
         specifier: workspace:*
         version: link:../utilities
@@ -9634,7 +9640,7 @@ snapshots:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       fast-glob: 3.3.3
-      ignore: 7.0.5
+      ignore: 7.0.6
       is-path-inside: 4.0.0
       slash: 5.1.0
       unicorn-magic: 0.4.0
