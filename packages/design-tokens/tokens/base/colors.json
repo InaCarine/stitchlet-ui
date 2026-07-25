@@ -52,7 +52,7 @@
       "50": { "value": "oklch(56.17% 0.141 246)", "type": "color" },
       "60": { "value": "oklch(49% 0.121 245.43)", "type": "color" },
       "70": { "value": "oklch(41.98% 0.101 244.71)", "type": "color" },
-      "80": { "value": "oklch(34.63% 0.080 243.49)", "type": "color" },
+      "80": { "value": "oklch(34.63% 0.08 243.49)", "type": "color" },
       "90": { "value": "oklch(26.15% 0.058 242)", "type": "color" }
     },
     "purple": {
