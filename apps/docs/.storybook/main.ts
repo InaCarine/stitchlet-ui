@@ -1,4 +1,4 @@
-import { dirname } from 'path';
+import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import type { StorybookConfig } from '@storybook/react-vite';
 
@@ -9,6 +9,9 @@ import type { StorybookConfig } from '@storybook/react-vite';
 function getAbsolutePath(value: string): string {
   return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
 }
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
+
 const config: StorybookConfig = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -21,6 +24,22 @@ const config: StorybookConfig = {
   framework: getAbsolutePath('@storybook/react-vite'),
   core: {
     disableTelemetry: true,
+  },
+  async viteFinal(config) {
+    config.resolve ??= {};
+    config.resolve.alias = [
+      ...(Array.isArray(config.resolve.alias) ? config.resolve.alias : []),
+      {
+        find: '@stitchlet/ui/styles',
+        replacement: resolve(currentDir, '../../../packages/ui/styles/tokens.css'),
+      },
+      {
+        find: '@stitchlet/ui',
+        replacement: resolve(currentDir, '../../../packages/ui/src/index.ts'),
+      },
+    ];
+
+    return config;
   },
 };
 export default config;

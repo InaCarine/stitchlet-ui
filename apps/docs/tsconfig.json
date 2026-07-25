@@ -1,5 +1,12 @@
 {
   "extends": "@repo/typescript-config/vite.json",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", ".storybook/**/*.ts", ".storybook/**/*.tsx"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@stitchlet/ui": ["../../packages/ui/src/index.ts"],
+      "@stitchlet/ui/styles": ["../../packages/ui/styles/tokens.css"]
+    }
+  }
 }
