@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 
-import { PolymorphicComponentProps } from '@/types/polymorphic-component';
+import { PolymorphicComponentProps } from '../../types/polymorphic-component';
 
 export interface ButtonOwnProps {
   color?: string;

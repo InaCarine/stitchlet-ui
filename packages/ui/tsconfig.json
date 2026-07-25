@@ -13,10 +13,7 @@
     "noFallthroughCasesInSwitch": true,
     "useDefineForClassFields": true,
     "outDir": "./dist",
-    "rootDir": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "rootDir": "."
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
