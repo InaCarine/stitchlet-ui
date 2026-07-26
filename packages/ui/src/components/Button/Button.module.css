@@ -1,3 +1,11 @@
 .button {
-  color: oklch(21.2% 0 0);
+  padding: var(--space-20, 0.5rem) var(--space-40, 1rem);
+  border: none;
+  border-radius: 10em;
+  cursor: pointer;
+}
+
+.button--primary {
+  background-color: var(--color-background-brand-default, oklch(58.85% 0.208 302.82));
+  color: var(--color-neutral-0, oklch(100% 0 0));
 }
