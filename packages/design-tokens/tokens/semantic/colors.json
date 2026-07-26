@@ -15,6 +15,14 @@
           "type": "color"
         }
       }
+    },
+    "text": {
+      "value": "{color.neutral.70}",
+      "type": "color"
+    },
+    "text-inverse": {
+      "value": "{color.neutral.0}",
+      "type": "color"
     }
   }
 }

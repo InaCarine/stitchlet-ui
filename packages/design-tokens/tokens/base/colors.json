@@ -1,6 +1,7 @@
 {
   "color": {
-    "grey": {
+    "neutral": {
+      "0": { "value": "oklch(100% 0 0)", "type": "color" },
       "10": { "value": "oklch(91.5% 0 0)", "type": "color" },
       "20": { "value": "oklch(82.9% 0 0)", "type": "color" },
       "30": { "value": "oklch(74.4% 0 0)", "type": "color" },
