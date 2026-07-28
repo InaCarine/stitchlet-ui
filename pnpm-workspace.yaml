@@ -15,6 +15,7 @@ allowBuilds:
   esbuild: false
   sharp: false
   unrs-resolver: false
+minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - minimatch@3.1.3
   - rollup@4.59.0
@@ -34,5 +35,3 @@ minimumReleaseAgeExclude:
   - vite@7.3.5
   - js-yaml@4.1.2
   - '@babel/core@7.29.1'
-
-# minimumReleaseAge: 20160 # minutes; here: 2 weeks

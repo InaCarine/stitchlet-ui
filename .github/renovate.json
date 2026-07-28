@@ -7,31 +7,96 @@
   "gitAuthor": "InaCarine <29457046+InaCarine@users.noreply.github.com>",
   "repositories": ["InaCarine/stitchlet-ui"],
   "platform": "github",
-  "minimumReleaseAge": "14 days",
   "platformAutomerge": true,
   "semanticCommits": "enabled",
   "internalChecksFilter": "strict",
   "onboarding": false,
+
+  "minimumReleaseAge": "7 days",
+  "dependencyDashboard": true,
+  "prConcurrentLimit": 5,
+  "rangeStrategy": "bump",
+
   "lockFileMaintenance": {
     "enabled": true,
+    "schedule": ["before 4am on monday"],
     "automerge": true
   },
+
   "packageRules": [
     {
+      "description": "Automerge safe non-major dev tooling after release-age gate",
       "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["lint", "prettier"],
-      "automerge": true
-    },
-    {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": ["patch", "minor", "digest", "pin"],
       "matchCurrentVersion": "!/^0/",
+      "matchPackageNames": [
+        "prettier",
+        "eslint",
+        "stylelint",
+        "@types/**",
+        "@commitlint/**",
+        "lint-staged",
+        "husky"
+      ],
       "automerge": true
     },
     {
-      "description": "lockFileMaintenance",
-      "matchUpdateTypes": ["digest", "patch", "minor", "lockFileMaintenance"],
-      "dependencyDashboardApproval": false
+      "description": "Group Storybook stack updates",
+      "matchPackageNames": [
+        "storybook",
+        "@storybook/**",
+        "@chromatic-com/storybook",
+        "eslint-plugin-storybook"
+      ],
+      "groupName": "storybook stack",
+      "minimumReleaseAge": "14 days",
+      "automerge": false
+    },
+    {
+      "description": "Group test stack updates",
+      "matchPackageNames": [
+        "jest",
+        "jest-environment-jsdom",
+        "ts-jest",
+        "vitest",
+        "@vitest/**",
+        "@testing-library/**",
+        "playwright"
+      ],
+      "groupName": "test stack",
+      "minimumReleaseAge": "14 days",
+      "automerge": false
+    },
+    {
+      "description": "Core framework and compiler updates need manual review",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "typescript",
+        "next",
+        "tsdown",
+        "@tsdown/**",
+        "babel-plugin-react-compiler",
+        "@rollup/**"
+      ],
+      "minimumReleaseAge": "14 days",
+      "automerge": false
+    },
+    {
+      "description": "Never automerge majors",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Do not automerge pre-1.0 packages",
+      "matchCurrentVersion": "/^0\\./",
+      "automerge": false
+    },
+    {
+      "description": "Lock file maintenance",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "dependencyDashboardApproval": false,
+      "automerge": true
     }
   ]
 }
