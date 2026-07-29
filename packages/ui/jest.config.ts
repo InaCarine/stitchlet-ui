@@ -5,6 +5,13 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!src/**/*.d.ts',
+    '!src/**/types.{ts,tsx}',
+    '!src/types/**',
+    '!src/**/index.{ts,tsx}',
+  ],
   testEnvironment: 'jsdom',
   preset: 'ts-jest',
   testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
