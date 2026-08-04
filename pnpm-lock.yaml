@@ -16,7 +16,7 @@ catalogs:
       specifier: ^19.2.3
       version: 19.2.3
     eslint:
-      specifier: ^9.39.4
+      specifier: ^9.39.5
       version: 9.39.5
     react:
       specifier: ^19.2.4
