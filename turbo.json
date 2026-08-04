@@ -15,9 +15,7 @@
       "dependsOn": ["^lint:css"],
       "outputs": ["node_modules/.cache/stylelint"]
     },
-    "check-types": {
-      "dependsOn": ["^check-types"]
-    },
+    "check-types": {},
     "test": {},
     "test:watch": {
       "cache": false,

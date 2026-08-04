@@ -6,7 +6,8 @@
     "jsx": "react-jsx",
     "paths": {
       "@stitchlet/ui": ["../../packages/ui/src/index.ts"],
-      "@stitchlet/ui/styles": ["../../packages/ui/styles/tokens.css"]
+      "@stitchlet/ui/styles": ["../../packages/ui/styles/tokens.css"],
+      "@stitchlet/utilities": ["../../packages/utilities/src/index.ts"]
     }
   }
 }

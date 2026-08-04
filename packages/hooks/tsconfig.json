@@ -1,14 +1,16 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "lib": ["DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": ["jest"],
-    "outDir": "dist",
-    "rootDir": ".",
+    "jsxImportSource": "react",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+    "types": ["jest", "node"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@stitchlet/utilities": ["../utilities/src/index.ts"]
     }
   },
   "include": ["src/**/*", "jest.config.ts", "jest.setup.ts"],

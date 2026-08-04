@@ -1,5 +1,5 @@
 {
-  "name": "starter-project-monorepo",
+  "name": "@stitchlet-ui",
   "private": true,
   "workspaces": [
     "apps/*",
