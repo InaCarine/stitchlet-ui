@@ -1,11 +1,68 @@
 .button {
-  padding: var(--space-20, 0.5rem) var(--space-40, 1rem);
+  --button-background-color: var(--color-background-brand-default, oklch(55% 0.15 308));
+  --button-text-color: var(--color-neutral-0, oklch(100% 0 0));
+  --button-space-y: var(--space-20, 0.5rem);
+  --button-space-x: var(--space-40, 1rem);
+
+  padding: var(--button-space-y) var(--button-space-x);
   border: none;
   border-radius: 10em;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  font-weight: 600;
   cursor: pointer;
 }
 
+.button--small {
+  --button-space-y: var(--space-20, 0.5rem);
+  --button-space-x: var(--space-40, 1rem);
+}
+
+.button--medium {
+  --button-space-y: var(--space-30, 0.75rem);
+  --button-space-x: var(--space-50, 1.5rem);
+}
+
+.button--large {
+  --button-space-y: var(--space-40, 1rem);
+  --button-space-x: var(--space-60, 2rem);
+}
+
+.button--fit-container {
+  width: 100%;
+}
+
+.button--solid {
+  border: none;
+}
+
+.button--outline {
+  border: 2px solid var(--button-background-color);
+
+  &:not(:hover, :focus-visible) {
+    background-color: var(--button-text-color);
+    color: var(--button-background-color);
+  }
+}
+
+.button--ghost {
+  border: none;
+
+  &:not(:hover, :focus-visible) {
+    background-color: transparent;
+    color: var(--button-background-color);
+  }
+}
+
 .button--primary {
-  background-color: var(--color-background-brand-default, oklch(58.85% 0.208 302.82));
-  color: var(--color-neutral-0, oklch(100% 0 0));
+  --button-background-color: var(--color-background-brand-default, oklch(55% 0.15 308));
+
+  &:hover,
+  &:focus-visible {
+    --button-background-color: var(--color-background-brand-default-hover, oklch(45% 0.15 308));
+  }
+
+  &:active {
+    --button-background-color: var(--color-background-brand-default-active, oklch(30% 0.09 308));
+  }
 }

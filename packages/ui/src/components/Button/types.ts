@@ -3,7 +3,7 @@ import { ElementType } from 'react';
 import { PolymorphicComponentProps } from '../../types/polymorphic-component';
 
 interface ButtonBaseProps {
-  appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success';
+  appearance?: 'primary' | 'warning' | 'danger' | 'success';
   variant?: 'solid' | 'outline' | 'ghost';
   size?: 'small' | 'medium' | 'large';
   iconBefore?: React.ReactNode;

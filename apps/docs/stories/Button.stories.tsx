@@ -20,7 +20,7 @@ const meta = {
     },
     appearance: {
       control: 'select',
-      options: ['primary', 'secondary', 'warning', 'danger', 'success'],
+      options: ['primary', 'warning', 'danger', 'success'],
     },
     variant: {
       control: 'select',
@@ -69,9 +69,9 @@ type Story = StoryObj<Meta<DefaultButtonProps>>;
 
 export const Primary: Story = {};
 
-export const Secondary: Story = {
+export const Danger: Story = {
   args: {
-    appearance: 'secondary',
+    appearance: 'danger',
   } satisfies Partial<DefaultButtonProps>,
 };
 
