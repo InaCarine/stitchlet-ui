@@ -14,6 +14,48 @@
           "value": "{color.purple.80}",
           "type": "color"
         }
+      },
+      "danger": {
+        "default": {
+          "value": "{color.red.50}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.red.70}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.red.80}",
+          "type": "color"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "{color.yellow.20}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.yellow.50}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.yellow.60}",
+          "type": "color"
+        }
+      },
+      "success": {
+        "default": {
+          "value": "{color.green.50}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.green.70}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.green.80}",
+          "type": "color"
+        }
       }
     },
     "text": {

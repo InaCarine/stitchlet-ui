@@ -69,33 +69,21 @@ type Story = StoryObj<Meta<DefaultButtonProps>>;
 
 export const Primary: Story = {};
 
+export const Success: Story = {
+  args: {
+    appearance: 'success',
+  } satisfies Partial<DefaultButtonProps>,
+};
+
 export const Danger: Story = {
   args: {
     appearance: 'danger',
   } satisfies Partial<DefaultButtonProps>,
 };
 
-export const Outline: Story = {
+export const Warning: Story = {
   args: {
-    variant: 'outline',
-  } satisfies Partial<DefaultButtonProps>,
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: 'ghost',
-  } satisfies Partial<DefaultButtonProps>,
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-  } satisfies Partial<DefaultButtonProps>,
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
+    appearance: 'warning',
   } satisfies Partial<DefaultButtonProps>,
 };
 

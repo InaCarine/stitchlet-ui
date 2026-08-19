@@ -1,6 +1,9 @@
 .button {
   --button-background-color: var(--color-background-brand-default, oklch(55% 0.15 308));
-  --button-text-color: var(--color-neutral-0, oklch(100% 0 0));
+  --button-background-color-inverse: var(--color-text-inverse, oklch(100% 0 0));
+  --button-text-color: var(--color-text-inverse, oklch(100% 0 0));
+  --button-text-color-inverse: var(--button-background-color, oklch(55% 0.15 308));
+  --button-border-color: var(--button-background-color, oklch(55% 0.15 308));
   --button-space-y: var(--space-20, 0.5rem);
   --button-space-x: var(--space-40, 1rem);
 
@@ -11,6 +14,32 @@
   color: var(--button-text-color);
   font-weight: 600;
   cursor: pointer;
+}
+
+.button--fit-container {
+  width: 100%;
+}
+
+.button--solid {
+  border: none;
+}
+
+.button--outline {
+  border: 2px solid var(--button-border-color);
+
+  &:not(:hover, :focus-visible) {
+    background-color: var(--button-background-color-inverse);
+    color: var(--button-text-color-inverse);
+  }
+}
+
+.button--ghost {
+  border: none;
+
+  &:not(:hover, :focus-visible) {
+    background-color: transparent;
+    color: var(--button-text-color-inverse);
+  }
 }
 
 .button--small {
@@ -28,32 +57,6 @@
   --button-space-x: var(--space-60, 2rem);
 }
 
-.button--fit-container {
-  width: 100%;
-}
-
-.button--solid {
-  border: none;
-}
-
-.button--outline {
-  border: 2px solid var(--button-background-color);
-
-  &:not(:hover, :focus-visible) {
-    background-color: var(--button-text-color);
-    color: var(--button-background-color);
-  }
-}
-
-.button--ghost {
-  border: none;
-
-  &:not(:hover, :focus-visible) {
-    background-color: transparent;
-    color: var(--button-background-color);
-  }
-}
-
 .button--primary {
   --button-background-color: var(--color-background-brand-default, oklch(55% 0.15 308));
 
@@ -64,5 +67,50 @@
 
   &:active {
     --button-background-color: var(--color-background-brand-default-active, oklch(30% 0.09 308));
+  }
+}
+
+.button--success {
+  --button-background-color: var(--color-background-success-default, oklch(55% 0.1 138));
+
+  &:hover,
+  &:focus-visible {
+    --button-background-color: var(--color-background-success-default-hover, oklch(45% 0.1 138));
+  }
+
+  &:active {
+    --button-background-color: var(--color-background-success-default-active, oklch(35% 0.1 138));
+  }
+}
+
+.button--danger {
+  --button-background-color: var(--color-background-danger-default, oklch(60% 0.19 18));
+
+  &:hover,
+  &:focus-visible {
+    --button-background-color: var(--color-background-danger-default-hover, oklch(45% 0.17 18));
+  }
+
+  &:active {
+    --button-background-color: var(--color-background-danger-default-active, oklch(35% 0.12 18));
+  }
+}
+
+.button--warning {
+  --button-background-color: var(--color-background-warning-default, oklch(85% 0.14 90));
+  --button-border-color: var(--color-background-warning-default-hover, oklch(55% 0.1 70));
+
+  &:not(:hover, :focus-visible, :active) {
+    --button-text-color: var(--color-text, oklch(39.4% 0 0));
+    --button-text-color-inverse: var(--color-background-warning-default-hover, oklch(55% 0.1 70));
+  }
+
+  &:hover,
+  &:focus-visible {
+    --button-background-color: var(--color-background-warning-default-hover, oklch(55% 0.1 70));
+  }
+
+  &:active {
+    --button-background-color: var(--color-background-warning-default-active, oklch(50% 0.1 70));
   }
 }
