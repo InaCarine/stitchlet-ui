@@ -82,7 +82,7 @@
     "stylelint": "catalog:",
     "ts-jest": "29.4.11",
     "ts-node": "^10.9.2",
-    "tsdown": "^0.22.2",
+    "tsdown": "^0.23.0",
     "typescript": "catalog:"
   },
   "peerDependencies": {
