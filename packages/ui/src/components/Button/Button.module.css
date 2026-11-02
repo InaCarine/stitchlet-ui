@@ -114,3 +114,19 @@
     --button-background-color: var(--color-background-warning-default-active, oklch(50% 0.1 70));
   }
 }
+
+.button[aria-disabled='true'] {
+  --button-background-color: var(--color-background-disabled-default, oklch(90% 0 0));
+  --button-border-color: var(--color-background-disabled-default, oklch(90% 0 0));
+
+  color: var(--color-neutral-60, oklch(45% 0 0));
+
+  &:hover,
+  &:focus-visible {
+    --button-background-color: var(--color-background-disabled-default-hover, oklch(85% 0 0));
+  }
+
+  &:active {
+    --button-background-color: var(--color-background-disabled-default-active, oklch(75% 0 0));
+  }
+}

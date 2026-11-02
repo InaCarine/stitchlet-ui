@@ -18,22 +18,28 @@ export const Button = <E extends ElementType = typeof defaultElement>({
   iconBefore,
   iconAfter,
   shouldFitContainer,
-  ...props
+  disabled,
+  loading,
+  ...restProps
 }: ButtonProps<E>) => {
   const Element = as || defaultElement;
   const isButtonElement = Element === 'button';
 
-  const disabled = isButtonElement && 'disabled' in props ? props.disabled : undefined;
-  const loading = isButtonElement && 'loading' in props ? props.loading : undefined;
-  const type = isButtonElement && 'type' in props ? (props.type ?? 'button') : undefined;
+  const isLoading = Boolean(isButtonElement && loading);
+  const isDisabled = Boolean(isButtonElement && (disabled || loading));
 
-  const elementProps = isButtonElement
+  const buttonType =
+    isButtonElement && 'type' in restProps ? (restProps.type ?? 'button') : 'button';
+  const buttonOnClick =
+    isButtonElement && !isDisabled && 'onClick' in restProps ? restProps.onClick : undefined;
+
+  const buttonProps = isButtonElement
     ? {
-        ...props,
-        type,
-        disabled,
+        type: buttonType,
+        'aria-disabled': isDisabled || undefined,
+        onClick: buttonOnClick,
       }
-    : props;
+    : {};
 
   const elementStyles = clsx(
     styles.button,
@@ -43,13 +49,12 @@ export const Button = <E extends ElementType = typeof defaultElement>({
     iconBefore && styles['button--icon-before'],
     iconAfter && styles['button--icon-after'],
     shouldFitContainer && styles['button--fit-container'],
-    disabled && styles['button--disabled'],
-    loading && styles['button--loading'],
+    isLoading && styles['button--loading'],
     className
   );
 
   return (
-    <Element className={elementStyles} {...elementProps}>
+    <Element className={elementStyles} {...restProps} {...buttonProps}>
       {children}
     </Element>
   );

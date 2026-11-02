@@ -56,6 +56,20 @@
           "value": "{color.green.80}",
           "type": "color"
         }
+      },
+      "disabled": {
+        "default": {
+          "value": "{color.neutral.10}",
+          "type": "color"
+        },
+        "default-hover": {
+          "value": "{color.neutral.20}",
+          "type": "color"
+        },
+        "default-active": {
+          "value": "{color.neutral.30}",
+          "type": "color"
+        }
       }
     },
     "text": {

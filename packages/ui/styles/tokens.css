@@ -80,6 +80,9 @@
   --color-background-success-default: var(--color-green-50);
   --color-background-success-default-hover: var(--color-green-70);
   --color-background-success-default-active: var(--color-green-80);
+  --color-background-disabled-default: var(--color-neutral-10);
+  --color-background-disabled-default-hover: var(--color-neutral-20);
+  --color-background-disabled-default-active: var(--color-neutral-30);
   --color-text: var(--color-neutral-70);
   --color-text-inverse: var(--color-neutral-0);
 }
